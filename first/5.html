@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="qiQi">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="myCtrl">
+    <ul>
+        <li ng-repeat="val in name track by $index">
+            {{val}} {{$index}}
+        </li>
+    </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module("qiQi",[]);
+    app.controller("myCtrl",["$scope",function(a){
+        a.name=["苹果","橘子","香蕉","苹果"];
+        /*要遍历谁*/
+    }])
+</script>
+</body>
+</html>

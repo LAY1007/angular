@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="qiW">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<div ng-controller="myC">
+    <ul >
+       &lt;!&ndash; 1.$ng-init:在当前作用域下声明一个变量&ndash;&gt;
+        &lt;!&ndash;2.(parent,val)前面是当前的索引，后面是便利项&ndash;&gt;
+        <li ng-repeat="(parent,val) in datas track by $index" ng-init="parent=$index">
+            {{val.name}}{{$index}}
+            <ul>
+                <li ng-repeat="(child,type) in val.type track by $index">
+                   {{parent}} {{type}}{{child}}
+                </li>
+            </ul>
+        </li>
+
+</ul>
+</div>-->
+<div ng-controller="myC">
+  <ul>
+      <li ng-repeat="(key,value) in obj track by $index">
+       {{key}}{{value}}
+      </li>
+  </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module("qiW",[]);
+    app.controller("myC",["$scope",function(a){
+        a.datas=[
+            {name:"iphone",type:['iphone7','iphone8']},
+            {name:"水果",type:['香蕉','橘子']}
+        ];
+       a.obj={
+            name:'zfpx',
+            age:3,
+            address:'回龙观'
+        }
+
+    }])
+
+</script>
+</body>
+</html>

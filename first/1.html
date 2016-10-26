@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<!--&lt;!&ndash;ng-app 代表的是angular从哪里开始起始，并且赋予一个根作用域-$rootScope,一定要写在html上，不能写在head上->-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--双向数据绑定，一定是表单类型-->
+<input type="text" ng-model="name"/><!--没有value--><!--ng-model是绑定数据-->
+{{name}}
+<!--想让元素双向绑定，就添加一个ng-model属性（指令）-->
+          <!--在当前作用域下绑定一个name属性,如果当前作用域下没有，则表示创建一个name属性挂在在当前的作用域下
+          {{name}}}取出name的值
+          -->
+<!--当我们引用了angular.js后，会提供一个angular全局对象-->
+<script src="./node_modules/angular/angular.js"></script>
+</body>
+</html>

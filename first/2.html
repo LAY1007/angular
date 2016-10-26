@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head >
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--1.ng-bind 绑定一个变量，防止闪烁（不能绑定多个，标签内不能写任何内容）-->
+<input type="text" ng-model="name"/>
+<input type="text" ng-model="age"/>
+
+
+<!--<div ng-bind="name"></div>
+<div ng-bind="age"></div>-->
+
+<!--2.ng-bind-template 可以绑定多个 绑定的是字符串,标签内不能写任何内容-->
+<!--<div ng-bind-template="{{name}} {{age}}"></div>-->
+
+<!--3.ng-cloak  防止闪烁,需要给所有带ng-cloak的标签写display：none-->
+<div ng-cloak>
+    {{name}}
+    <div>{{name}}</div>
+    {{name}}
+</div>
+<style>
+    [ng-cloak]{display:none}
+</style>
+
+<!--支持简单的三元表达式 还支持运算符-->
+<!--{{name}}
+{{name=name+1}}
+{{3+3*2+1}}
+{{true?'1':'0'}}-->
+<script src="node_modules/angular/angular.js"></script>
+</body>
+</html>
